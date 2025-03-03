@@ -1,0 +1,10 @@
+/* Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
