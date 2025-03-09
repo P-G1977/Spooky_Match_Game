@@ -51,3 +51,18 @@ const movesCounter = () => {
     movesCount += 1;
     moves.innerHTML = `<span>Moves:</span>${movesCount}`;
   };
+
+  // Pick random objects from items array
+const generateRandom = (size = 4) => {
+    // temp array
+    let tempArray = [...items];
+    let cardValues = [];
+    size = (size * size) / 2;
+    // Random object select
+    for (let i = 0; i < size; i++) {
+      const randomIndex = Math.floor(Math.random() * tempArray.length);
+      cardValues.push(tempArray[randomIndex]);
+      tempArray.splice(randomIndex, 1);
+    }
+    return cardValues;
+  };
