@@ -26,3 +26,17 @@ const items = [
     {name: "grave", image:"assets/images/grave.png"},
 ];
 
+// Time
+let seconds = 0, minutes = 0;
+// Moves and win count
+let movesCount = 0, winCount = 0;
+
+// timer
+const timeGenerator = () => {
+    seconds += 1;
+
+    if (seconds >= 60) {
+      minutes += 1;
+      seconds = 0;
+    }
+};
