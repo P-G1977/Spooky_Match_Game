@@ -8,3 +8,19 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  body {
+    background-color: #980002;
+  }
+
+  .wrapper {
+    box-sizing: border-box;
+    width: 26.87em;
+    padding: 2.5em 3em;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    right: 50%;
+  }
+  
