@@ -66,3 +66,21 @@ const generateRandom = (size = 4) => {
     }
     return cardValues;
   };
+
+  const matrixGenerator = (cardValues, size = 4) => {
+    gameContainer.innerHTML = "";
+    cardValues = [...cardValues, ...cardValues];
+    // shuffle
+    cardValues.sort(() => Math.random() - 0.5);
+    for (let i = 0; i < size * size; i++) {
+      // create the cards
+      gameContainer.innerHTML += `
+        <div class="card-container" data-card-value="${cardValues[i].name}">
+          <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
+          <div class="card-after">
+            <img src="${cardValues[i].image}" class="image"/>
+          </div>
+        </div>
+      `;
+    }
+};
