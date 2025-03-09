@@ -78,3 +78,10 @@
   background-color: #ffffff;
   transform: rotateY(180deg);
 }
+
+.card-container.flipped .card-before {
+  transform: rotateY(180deg);
+}
+.card-container.flipped .card-after {
+  transform: rotateY(0deg);
+}
