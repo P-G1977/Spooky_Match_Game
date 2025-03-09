@@ -7,11 +7,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "metal Mania", sans-serif;
   }
 
   body {
-    background-color: #980002;
+    background-color: #f30808;
+    color: #ffffff;
+    background-image: url('../images/pumpkins.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Metal Mania", sans-serif;
+    font-weight: 600;
+    font-style: normal;
   }
 
   /* Wrapper */
