@@ -48,33 +48,33 @@ const timeGenerator = () => {
 
 // calculate moves
 const movesCounter = () => {
-    movesCount += 1;
-    moves.innerHTML = `<span>Moves:</span>${movesCount}`;
-  };
+  movesCount += 1;
+  moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+};
 
-  // Pick random objects from items array
+// Pick random objects from items array
 const generateRandom = (size = 4) => {
-    // temp array
-    let tempArray = [...items];
-    let cardValues = [];
-    size = (size * size) / 2;
-    // Random object select
-    for (let i = 0; i < size; i++) {
-      const randomIndex = Math.floor(Math.random() * tempArray.length);
-      cardValues.push(tempArray[randomIndex]);
-      tempArray.splice(randomIndex, 1);
-    }
-    return cardValues;
-  };
+  // temp array
+  let tempArray = [...items];
+  let cardValues = [];
+  size = (size * size) / 2;
+  // Random object select
+  for (let i = 0; i < size; i++) {
+    const randomIndex = Math.floor(Math.random() * tempArray.length);
+    cardValues.push(tempArray[randomIndex]);
+    tempArray.splice(randomIndex, 1);
+  }
+  return cardValues;
+};
 
-  const matrixGenerator = (cardValues, size = 4) => {
-    gameContainer.innerHTML = "";
-    cardValues = [...cardValues, ...cardValues];
-    // shuffle
-    cardValues.sort(() => Math.random() - 0.5);
-    for (let i = 0; i < size * size; i++) {
-      // create the cards
-      gameContainer.innerHTML += `
+const matrixGenerator = (cardValues, size = 4) => {
+  gameContainer.innerHTML = "";
+  cardValues = [...cardValues, ...cardValues];
+  // shuffle
+  cardValues.sort(() => Math.random() - 0.5);
+  for (let i = 0; i < size * size; i++) {
+    // create the cards
+    gameContainer.innerHTML += `
         <div class="card-container" data-card-value="${cardValues[i].name}">
           <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
           <div class="card-after">
@@ -82,11 +82,11 @@ const generateRandom = (size = 4) => {
           </div>
         </div>
       `;
-    }
-     //Grid
-   gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+  }
+  //Grid
+  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
 
-   // Cards
+  // Cards
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
@@ -130,13 +130,24 @@ const generateRandom = (size = 4) => {
 
 //Start game
 startButton.addEventListener("click", () => {
-    movesCount = 0;
-    seconds = 0;
-    minutes = 0;
-    controls.classList.add("hide");
-    stopButton.classList.remove("hide");
-    startButton.classList.add("hide");
-    interval = setInterval(timeGenerator, 1000);
-    moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
-    initializer();
-  });
+  movesCount = 0;
+  seconds = 0;
+  minutes = 0;
+  controls.classList.add("hide");
+  stopButton.classList.remove("hide");
+  startButton.classList.add("hide");
+  interval = setInterval(timeGenerator, 1000);
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  initializer();
+});
+
+//Stop game
+stopButton.addEventListener(
+  "click",
+  (stopGame = () => {
+    controls.classList.remove("hide");
+    stopButton.classList.add("hide");
+    startButton.classList.remove("hide");
+    clearInterval(interval);
+  })
+);
