@@ -14,6 +14,8 @@
     background-color: #980002;
   }
 
+  /* Wrapper */
+
   .wrapper {
     box-sizing: content-box;
     width: 26.87em;
@@ -41,4 +43,13 @@
 
   .stats-container span {
     font-weight: 600;
+  }
+
+  /* Cards */
+
+  .card-container {
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
   }
