@@ -7,11 +7,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "metal Mania", sans-serif;
   }
 
   body {
     background-color: #980002;
-    font-family: "metal Mania", sans-serif;
   }
 
   .wrapper {
@@ -31,4 +31,5 @@
     position: relative;
     width: 100%;
     display: grid;
+    gap: 0.6em;
   }
