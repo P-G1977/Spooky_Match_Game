@@ -70,41 +70,49 @@ const generateRandom = (size = 4) => {
 const matrixGenerator = (cardValues, size = 4) => {
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
-  // shuffle
+  // simple shuffle
   cardValues.sort(() => Math.random() - 0.5);
   for (let i = 0; i < size * size; i++) {
-    // create the cards
+    // Create Cards
     gameContainer.innerHTML += `
-        <div class="card-container" data-card-value="${cardValues[i].name}">
-          <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
-          <div class="card-after">
-            <img src="${cardValues[i].image}" class="image"/>
-          </div>
+      <div class="card-container" data-card-value="${cardValues[i].name}">
+        <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
+        <div class="card-after">
+          <img src="${cardValues[i].image}" class="image"/>
         </div>
-      `;
+      </div>
+    `;
   }
-  //Grid
-  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
 
+  // Grid
+  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
   // Cards
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      if (!card.classList.contains("matched")) {
+      if (firstCard && secondCard) {
+        return;
+      }
+
+      if (!card.classList.contains("matched") && !card.classList.contains("flipped")) {
         card.classList.add("flipped");
+
         if (!firstCard) {
           firstCard = card;
           firstCardValue = card.getAttribute("data-card-value");
-        } else {
-          movesCounter();
+        } else if (!secondCard) {
           secondCard = card;
-          let secondCardValue = card.getAttribute("data-card-value");
-          if (firstCardValue == secondCardValue) {
+          secondCardValue = card.getAttribute("data-card-value");
+          movesCounter();
+
+          if (firstCardValue === secondCardValue) {
             firstCard.classList.add("matched");
             secondCard.classList.add("matched");
             firstCard = false;
+            secondCard = false;
             winCount += 1;
-            if (winCount == Math.floor(cardValues.length / 2)) {
+
+            if (winCount === Math.floor(cardValues.length / 2)) {
               let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
               let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
               let totalTime = `${minutesValue}:${secondsValue}`;
@@ -117,7 +125,8 @@ const matrixGenerator = (cardValues, size = 4) => {
             let [tempFirst, tempSecond] = [firstCard, secondCard];
             firstCard = false;
             secondCard = false;
-            let delay = setTimeout(() => {
+
+            setTimeout(() => {
               tempFirst.classList.remove("flipped");
               tempSecond.classList.remove("flipped");
             }, 900);
