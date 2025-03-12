@@ -153,8 +153,27 @@ stopButton.addEventListener(
     stopButton.classList.add("hide");
     startButton.classList.remove("hide");
     clearInterval(interval);
+
+    // If the game was stopped before winning, show "You Lost"
+    if (winCount < Math.floor(cards.length / 2)) {
+      result.innerHTML = `<h2>You Lost</h2>
+                          <h4>Moves: ${movesCount}</h4>
+                          <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
+    } else {
+      // If game was won, display result with time and moves
+      result.innerHTML = `<h2>You Won!</h2>
+                          <h4>Moves: ${movesCount}</h4>
+                          <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
+    }
   })
 );
+
+const formatTime = (seconds, minutes) => {
+  let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+  return `${minutesValue}:${secondsValue}`;
+};
+
 //Initialise values and func calls
 const initializer = () => {
   result.innerText = "";
