@@ -139,7 +139,7 @@ const matrixGenerator = (cardValues, size = 4) => {
 
 /**
  * Starts the game when the start button is clicked.
- * This function initializes the game, resets all counters, and starts the timer.
+ * Resets the game state, sets up the timer, and initialises the game board.
  */
 startButton.addEventListener("click", () => {
   movesCount = 0;
