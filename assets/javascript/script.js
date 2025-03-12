@@ -67,13 +67,22 @@ const generateRandom = (size = 4) => {
   return cardValues;
 };
 
+
+/**
+ * Function to generate the game board matrix.
+ * Arranges card items randomly in a grid layout.
+ * 
+ * @param {Array} cardValues - Array of selected card values.
+ * @param {number} size - The size of the game grid (default is 4).
+ */
+
 const matrixGenerator = (cardValues, size = 4) => {
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
-  // simple shuffle
+
   cardValues.sort(() => Math.random() - 0.5);
   for (let i = 0; i < size * size; i++) {
-    // Create Cards
+
     gameContainer.innerHTML += `
       <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
@@ -84,9 +93,8 @@ const matrixGenerator = (cardValues, size = 4) => {
     `;
   }
 
-  // Grid
   gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
-  // Cards
+
   cards = document.querySelectorAll(".card-container");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
