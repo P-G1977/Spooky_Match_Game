@@ -191,7 +191,7 @@ button {
 
   @media screen and (min-width: 401px) and (max-width: 768px) {
     .game-container {
-      grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+      grid-template-columns: repeat(4, 1fr); 
     }
 
     .image {
@@ -201,7 +201,23 @@ button {
   
   
     .card-container {
-      height: 5em; /* Default card size */
+      height: 5em; 
       width: 100%;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .game-container {
+      grid-template-columns: repeat(5, 1fr); 
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
+    }
+  
+  
+    .card-container {
+      height: 7em; 
     }
   }
