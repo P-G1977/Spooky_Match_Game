@@ -177,6 +177,14 @@ stopButton.addEventListener(
   })
 );
 
+/**
+ * Helper function to format the time in MM:SS format.
+ * 
+ * @param {number} seconds - The number of seconds elapsed.
+ * @param {number} minutes - The number of minutes elapsed.
+ * @returns {string} - The formatted time string (MM:SS).
+ */
+
 const formatTime = (seconds, minutes) => {
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
