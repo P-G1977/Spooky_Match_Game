@@ -52,13 +52,19 @@ const movesCounter = () => {
   moves.innerHTML = `<span>Moves:</span>${movesCount}`;
 };
 
-// Pick random objects from items array
+
+/**
+ * Function to randomly select card items from the items array.
+ * It creates pairs of cards for the game board, making sure no duplicate pairs.
+ * 
+ * @param {number} size - The size of the game board (default is 4, resulting in a 4x4 grid).
+ * @returns {Array} - The array of randomly selected card items.
+ */
 const generateRandom = (size = 4) => {
-  // temp array
   let tempArray = [...items];
   let cardValues = [];
   size = (size * size) / 2;
-  // Random object select
+
   for (let i = 0; i < size; i++) {
     const randomIndex = Math.floor(Math.random() * tempArray.length);
     cardValues.push(tempArray[randomIndex]);
@@ -66,7 +72,6 @@ const generateRandom = (size = 4) => {
   }
   return cardValues;
 };
-
 
 /**
  * Function to generate the game board matrix.
