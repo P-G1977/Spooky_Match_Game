@@ -46,7 +46,10 @@ const timeGenerator = () => {
   timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
 };
 
-// calculate moves
+/**
+ * Function to count the number of moves made by the player.
+ * It increments the move count and updates the moves display.
+ */
 const movesCounter = () => {
   movesCount += 1;
   moves.innerHTML = `<span>Moves:</span>${movesCount}`;
