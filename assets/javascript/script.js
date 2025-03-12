@@ -154,7 +154,10 @@ startButton.addEventListener("click", () => {
   initializer();
 });
 
-//Stop game
+/**
+ * Function to stop or reset the game when the stop button is clicked.
+ * It also shows the result depending on whether the game was won or lost.
+ */
 stopButton.addEventListener(
   "click",
   (stopGame = () => {
@@ -163,13 +166,11 @@ stopButton.addEventListener(
     startButton.classList.remove("hide");
     clearInterval(interval);
 
-    // If the game was stopped before winning, show "You Lost"
     if (winCount < Math.floor(cards.length / 2)) {
       result.innerHTML = `<h2>You Lost</h2>
                           <h4>Moves: ${movesCount}</h4>
                           <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
     } else {
-      // If game was won, display result with time and moves
       result.innerHTML = `<h2>You Won!</h2>
                           <h4>Moves: ${movesCount}</h4>
                           <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
