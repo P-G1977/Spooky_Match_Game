@@ -183,7 +183,9 @@ const formatTime = (seconds, minutes) => {
   return `${minutesValue}:${secondsValue}`;
 };
 
-//Initialise values and func calls
+/**
+ * Initialises the game state, generates random cards, and starts the game.
+ */
 const initializer = () => {
   result.innerText = "";
   winCount = 0;
