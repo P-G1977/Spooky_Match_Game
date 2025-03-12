@@ -187,3 +187,21 @@ button {
       font-size: 1.5em;
     }
   }
+
+
+  @media screen and (min-width: 401px) and (max-width: 768px) {
+    .game-container {
+      grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
+    }
+  
+  
+    .card-container {
+      height: 5em; /* Default card size */
+      width: 100%;
+    }
+  }
