@@ -21,9 +21,24 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
+
   <body>
-    <!-- main game html -->
+       <!-- main game html -->
     <main>
+      <div id="welcome-modal" class="modal">
+        <div class="modal-content">
+          <h2>Welcome to The Spook Match Game!</h2>
+          <p>Get ready to test your memory in this spooky Halloween-themed game!</p>
+          <h3>How to Play:</h3>
+          <ul>
+            <li>Click on a card to reveal the hidden spooky item.</li>
+            <li>Find and match pairs of identical cards.</li>
+            <li>Try to match all pairs in the shortest time possible!</li>
+            <li>The game ends when all pairs are matched.</li>
+          </ul>
+          <button id="close-modal" class="btn btn-dark">Let's Play!</button>
+        </div>
+      </div>
       <div class="wrapper">
         <div class="stats-container">
           <h1 class="game-title">The Spook Match Game</h1>

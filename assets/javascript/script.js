@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("welcome-modal");
+  const closeModal = document.getElementById("close-modal");
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+});
+
 const moves = document.getElementById("moves-count");
 const timeValue = document.getElementById("time");
 const startButton = document.getElementById("start");
@@ -55,11 +63,10 @@ const movesCounter = () => {
   moves.innerHTML = `<span>Moves:</span>${movesCount}`;
 };
 
-
 /**
  * Function to randomly select card items from the items array.
  * It creates pairs of cards for the game board, making sure no duplicate pairs.
- * 
+ *
  * @param {number} size - The size of the game board (default is 4, resulting in a 4x4 grid).
  * @returns {Array} - The array of randomly selected card items.
  */
@@ -79,7 +86,7 @@ const generateRandom = (size = 4) => {
 /**
  * Function to generate the game board matrix.
  * Arranges card items randomly in a grid layout.
- * 
+ *
  * @param {Array} cardValues - Array of selected card values.
  * @param {number} size - The size of the game grid (default is 4).
  */
@@ -90,7 +97,6 @@ const matrixGenerator = (cardValues, size = 4) => {
 
   cardValues.sort(() => Math.random() - 0.5);
   for (let i = 0; i < size * size; i++) {
-
     gameContainer.innerHTML += `
       <div class="card-container" data-card-value="${cardValues[i].name}">
         <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
@@ -110,7 +116,10 @@ const matrixGenerator = (cardValues, size = 4) => {
         return;
       }
 
-      if (!card.classList.contains("matched") && !card.classList.contains("flipped")) {
+      if (
+        !card.classList.contains("matched") &&
+        !card.classList.contains("flipped")
+      ) {
         card.classList.add("flipped");
 
         if (!firstCard) {
@@ -196,7 +205,7 @@ stopButton.addEventListener(
 
 /**
  * Helper function to format the time in MM:SS format.
- * 
+ *
  * @param {number} seconds - The number of seconds elapsed.
  * @param {number} minutes - The number of minutes elapsed.
  * @returns {string} - The formatted time string (MM:SS).
