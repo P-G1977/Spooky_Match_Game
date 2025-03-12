@@ -147,3 +147,43 @@ button {
   font-size: 1.8em;
   margin: 0.6em 0 1em 0;
 }
+
+/* Media Queries */
+  
+  /* For smaller devices */
+  @media (max-width: 400px) {
+    .game-title {
+      font-size: 2em;
+    }
+  
+    .game-container {
+      grid-template-columns: repeat(3, 1fr); 
+    }
+
+    .image {
+        height: 100%;
+        width: 100%;
+    }
+  
+    .card-container {
+      height: 5em; 
+      width: 120%;
+    }
+  
+    button {
+      font-size: 1.1em;
+      padding: 0.8em 1.2em;
+    }
+  
+    #stop {
+      font-size: 1em;
+    }
+  
+    #result h2 {
+      font-size: 2em;
+    }
+  
+    #result h4 {
+      font-size: 1.5em;
+    }
+  }
