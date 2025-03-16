@@ -33,7 +33,7 @@
     width: 100%;
     max-width: 28em; 
     padding: 2em 2.5em;
-    background-color: #880808;
+    background-color: rgba(170, 3, 3, 0.4);
     border-radius: 0.6em;
     box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
     text-align: center;
