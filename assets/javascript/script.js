@@ -23,6 +23,8 @@ let firstCard = false;
 let secondCard = false;
 let firstCardValue, secondCardValue;
 
+const audio = document.getElementById("game-audio");
+
 // items array
 const items = [
   { name: "bat", image: "assets/images/bat.png" },
@@ -171,6 +173,20 @@ const matrixGenerator = (cardValues, size = 4) => {
 };
 
 /**
+ * Helper function to format the time in MM:SS format.
+ *
+ * @param {number} seconds - The number of seconds elapsed.
+ * @param {number} minutes - The number of minutes elapsed.
+ * @returns {string} - The formatted time string (MM:SS).
+ */
+
+const formatTime = (seconds, minutes) => {
+  let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+  return `${minutesValue}:${secondsValue}`;
+};
+
+/**
  * Starts the game when the start button is clicked.
  * Resets the game state, sets up the timer, and initialises the game board.
  */
@@ -185,6 +201,9 @@ startButton.addEventListener("click", () => {
   interval = setInterval(timeGenerator, 1000);
   moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
   initializer();
+
+  audio.play();
+  audio.volume = 0.2;
 });
 
 /**
@@ -199,6 +218,9 @@ const stopGame = () => {
   startButton.classList.remove("hide");
   clearInterval(interval);
 
+  audio.pause();
+  audio.currentTime = 0;
+
   if (!cards || cards.length === 0) return; 
 
   result.innerHTML = `<h2>${winCount < Math.floor(cards.length / 2) ? "You Lost" : "You Won!"}</h2>
@@ -207,23 +229,12 @@ const stopGame = () => {
 };
 
 if (stopButton) {
-  stopButton.addEventListener("click", stopGame);
+  stopButton.addEventListener("click", () => {
+    stopGame();
+    audio.pause();
+    audio.currentTime = 0;
+  });
 }
-
-
-/**
- * Helper function to format the time in MM:SS format.
- *
- * @param {number} seconds - The number of seconds elapsed.
- * @param {number} minutes - The number of minutes elapsed.
- * @returns {string} - The formatted time string (MM:SS).
- */
-
-const formatTime = (seconds, minutes) => {
-  let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
-  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
-  return `${minutesValue}:${secondsValue}`;
-};
 
 /**
  * Initialises the game state, generates random cards, and starts the game.
