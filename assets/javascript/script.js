@@ -184,25 +184,25 @@ startButton.addEventListener("click", () => {
  * Function to stop or reset the game when the stop button is clicked.
  * It also shows the result depending on whether the game was won or lost.
  */
-stopButton.addEventListener(
-  "click",
-  (stopGame = () => {
-    controls.classList.remove("hide");
-    stopButton.classList.add("hide");
-    startButton.classList.remove("hide");
-    clearInterval(interval);
+const stopGame = () => {
+  if (!controls || !stopButton || !startButton || !result) return;
 
-    if (winCount < Math.floor(cards.length / 2)) {
-      result.innerHTML = `<h2>You Lost</h2>
-                          <h4>Moves: ${movesCount}</h4>
-                          <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
-    } else {
-      result.innerHTML = `<h2>You Won!</h2>
-                          <h4>Moves: ${movesCount}</h4>
-                          <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
-    }
-  })
-);
+  controls.classList.remove("hide");
+  stopButton.classList.add("hide");
+  startButton.classList.remove("hide");
+  clearInterval(interval);
+
+  if (!cards || cards.length === 0) return; 
+
+  result.innerHTML = `<h2>${winCount < Math.floor(cards.length / 2) ? "You Lost" : "You Won!"}</h2>
+                      <h4>Moves: ${movesCount}</h4>
+                      <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
+};
+
+if (stopButton) {
+  stopButton.addEventListener("click", stopGame);
+}
+
 
 /**
  * Helper function to format the time in MM:SS format.
