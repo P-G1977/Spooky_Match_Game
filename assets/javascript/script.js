@@ -42,7 +42,10 @@ let seconds = 0,
 let movesCount = 0,
   winCount = 0;
 
-// timer
+/**
+ * Function that updates and shows the time in MM:SS.
+ * It increments seconds every time it's called and will update the display.
+ */
 const timeGenerator = () => {
   seconds += 1;
 
