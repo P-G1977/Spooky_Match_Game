@@ -25,6 +25,25 @@ let firstCardValue, secondCardValue;
 
 const audio = document.getElementById("game-audio");
 
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("game-audio");
+  const audioToggleButton = document.getElementById("audio-toggle");
+  let isAudioPlaying = false;
+
+  audioToggleButton.addEventListener("click", () => {
+    if (isAudioPlaying) {
+      audio.pause();
+      audioToggleButton.innerText = "Music: OFF";
+    } else {
+      audio.play();
+      audioToggleButton.innerText = "Music: ON";
+    }
+    isAudioPlaying = !isAudioPlaying;
+  });
+
+  audio.volume = 0.2;
+});
+
 // items array
 const items = [
   { name: "bat", image: "assets/images/bat.png" },
