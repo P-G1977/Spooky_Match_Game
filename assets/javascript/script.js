@@ -17,6 +17,7 @@ let cards;
 let interval;
 let firstCard = false;
 let secondCard = false;
+let firstCardValue, secondCardValue;
 
 // items array
 const items = [
