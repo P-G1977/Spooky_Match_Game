@@ -1,3 +1,7 @@
+/**
+ * Event listener when the DOM content is fully loaded.
+ * This will hide the modal once the document is ready.
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("welcome-modal");
   const closeModal = document.getElementById("close-modal");
@@ -35,10 +39,10 @@ const items = [
   { name: "grave", image: "assets/images/grave.png" },
 ];
 
-// Time
+
 let seconds = 0,
   minutes = 0;
-// Moves and win count
+
 let movesCount = 0,
   winCount = 0;
 
