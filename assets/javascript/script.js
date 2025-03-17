@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const audioToggleButton = document.getElementById("audio-toggle");
   let isAudioPlaying = true;
 
+  audioToggleButton.style.display = "none";
+
   audioToggleButton.addEventListener("click", () => {
     if (isAudioPlaying) {
       audio.pause();
@@ -46,6 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   audio.volume = 0.2;
+  
+  startButton.addEventListener("click", () => {
+    audioToggleButton.style.display = "block";
+  });
+
+  stopButton.addEventListener("click", () => {
+    audioToggleButton.style.display = "none";
+  });
 });
 
 // items array

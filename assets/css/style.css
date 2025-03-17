@@ -217,12 +217,28 @@ button {
   margin: 0.6em 0 1em 0;
 }
 
+#audio-toggle {
+  display: block;
+  margin: 0 auto 5px auto;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
 /* Media Queries */
   
   /* For smaller devices */
   @media (max-width: 400px) {
     #moves-count, #time {
       font-size: 90%;
+    }
+
+    #audio-toggle {
+      font-size: 0.7em;
     }
     
     .style {
@@ -273,6 +289,10 @@ button {
   @media screen and (min-width: 401px) and (max-width: 768px) {
     #moves-count, #time {
       font-size: 95%;
+    }
+
+    #audio-toggle {
+      font-size: 0.8em;
     }
     
     .style {
