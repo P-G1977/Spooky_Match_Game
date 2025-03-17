@@ -25,6 +25,10 @@ let firstCardValue, secondCardValue;
 
 const audio = document.getElementById("game-audio");
 
+/**
+ * Event listener to manage the game music.
+ * Allows toggling the audio on and off with a button.
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("game-audio");
   const audioToggleButton = document.getElementById("audio-toggle");
@@ -59,7 +63,6 @@ const items = [
   { name: "zombie", image: "assets/images/zombie.png" },
   { name: "grave", image: "assets/images/grave.png" },
 ];
-
 
 let seconds = 0,
   minutes = 0;
@@ -119,7 +122,6 @@ const generateRandom = (size = 4) => {
  * @param {Array} cardValues - Array of selected card values.
  * @param {number} size - The size of the game grid (default is 4).
  */
-
 const matrixGenerator = (cardValues, size = 4) => {
   gameContainer.innerHTML = "";
   cardValues = [...cardValues, ...cardValues];
@@ -198,7 +200,6 @@ const matrixGenerator = (cardValues, size = 4) => {
  * @param {number} minutes - The number of minutes elapsed.
  * @returns {string} - The formatted time string (MM:SS).
  */
-
 const formatTime = (seconds, minutes) => {
   let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
   let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
@@ -240,9 +241,11 @@ const stopGame = () => {
   audio.pause();
   audio.currentTime = 0;
 
-  if (!cards || cards.length === 0) return; 
+  if (!cards || cards.length === 0) return;
 
-  result.innerHTML = `<h2>${winCount < Math.floor(cards.length / 2) ? "You Lost" : "You Won!"}</h2>
+  result.innerHTML = `<h2>${
+    winCount < Math.floor(cards.length / 2) ? "You Lost" : "You Won!"
+  }</h2>
                       <h4>Moves: ${movesCount}</h4>
                       <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
 };
