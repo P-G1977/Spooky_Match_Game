@@ -28,7 +28,7 @@ const audio = document.getElementById("game-audio");
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("game-audio");
   const audioToggleButton = document.getElementById("audio-toggle");
-  let isAudioPlaying = false;
+  let isAudioPlaying = true;
 
   audioToggleButton.addEventListener("click", () => {
     if (isAudioPlaying) {
