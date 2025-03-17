@@ -48,13 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   audio.volume = 0.2;
-  
+
   startButton.addEventListener("click", () => {
     audioToggleButton.style.display = "block";
+    audio.play();  
+    audioToggleButton.innerText = "Music: ON"; 
+    isAudioPlaying = true; 
   });
 
   stopButton.addEventListener("click", () => {
     audioToggleButton.style.display = "none";
+    audio.pause(); 
   });
 });
 
