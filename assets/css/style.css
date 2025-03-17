@@ -109,7 +109,7 @@
   .stats-row {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 104%;
     padding: 0 1em;
   }
   
@@ -237,6 +237,10 @@ button {
       grid-template-columns: repeat(3, 1fr); 
     }
 
+    .stats-row {
+      width: 110%;
+    }
+
     .image {
         height: 100%;
         width: 100%;
@@ -277,6 +281,10 @@ button {
     
     .game-container {
       grid-template-columns: repeat(4, 1fr); 
+    }
+
+    .stats-row {
+      width: 107%;
     }
 
     .image {
