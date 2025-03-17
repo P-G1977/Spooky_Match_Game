@@ -200,6 +200,10 @@ button {
   
   /* For smaller devices */
   @media (max-width: 400px) {
+    .style {
+      font-size: 80%;
+    }
+    
     .game-title {
       font-size: 2em;
     }
@@ -238,6 +242,10 @@ button {
 
 
   @media screen and (min-width: 401px) and (max-width: 768px) {
+    .style {
+      font-size: 90%;
+    }
+    
     .game-container {
       grid-template-columns: repeat(4, 1fr); 
     }
