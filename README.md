@@ -71,3 +71,11 @@ As you play, every move counts! Each match you find brings you closer to victory
 ### Features Left To Implement
 
 * I would like to have an option to play with more or less cards to increase / decrease difficulty. And have the ability to play aginst the timer to add an extra layer of challenge.
+
+## Testing
+
+* Accessibiliy
+
+  * I ran the page through Lighthouse and the performance score result showed 96. I found out that if I removed the unused script kit for FontAwesome I may get better performance results. After removing the script I scored 100 across the 5 categories.
+
+    ![alt text](assets/docs/testing/lighthouse.png "Lighthouse testing results")
