@@ -68,4 +68,6 @@ As you play, every move counts! Each match you find brings you closer to victory
 
     ![alt text](assets/docs/pages/music-on-off.png "Music on/off toggle")
 
-  
+### Features Left To Implement
+
+* I would like to have an option to play with more or less cards to increase / decrease difficulty. And have the ability to play aginst the timer to add an extra layer of challenge.
