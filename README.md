@@ -79,3 +79,24 @@ As you play, every move counts! Each match you find brings you closer to victory
   * I ran the page through Lighthouse and the performance score result showed 96. I found out that if I removed the unused script kit for FontAwesome I may get better performance results. After removing the script I scored 100 across the 5 categories.
 
     ![alt text](assets/docs/testing/lighthouse.png "Lighthouse testing results")
+
+* Chrome, Safari and Firefox browsers have been tested and they all work with the game.
+
+* HTML
+
+  * I ran the code through [W3C HTML validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fp-g1977.github.io%2FSpooky_Match_Game%2F) and there were no errors or warnings.
+
+    ![alt text](assets/docs/testing/nuhtmladdcheck.png "html check results")
+
+* CSS
+
+  * I ran the code through [W3C CSS validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fp-g1977.github.io%2FSpooky_Match_Game%2F#textarea) and there were also no errors or warnings.
+
+    ![alt text](assets/docs/testing/w3ccssval.png "css check results")
+
+* JavaScript
+
+  * I ran the code through [JS Hint](https://jshint.com/) and discovered 83 warnings with 'Two undefined variables'. I had not declared the 2 variables firstCardValue and secondCardValue. I declared the 2 variables and fixed the problem. However the 83 warnings I was not able to fix as far as I know. No errors. 
+
+    ![alt text](assets/docs/testing/jshint.png "JavaScript testing results")
+
