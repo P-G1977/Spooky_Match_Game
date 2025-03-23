@@ -50,4 +50,16 @@ As you play, every move counts! Each match you find brings you closer to victory
 
     ![alt text](assets/docs/pages/game-lost.png "The losing screen")
 
+* Winning Results
+
+  * "You Won!" Celebration: The winning screen displays a "You Won!" message, congratulating the player for successfully matching all the spooky pairs.
+
+  * Final Stats Display: The screen shows the player's total number of moves and the time taken to complete the game, encouraging them to beat their own record in future rounds.
+
+  * Game Reset Prompt: After winning, the player can restart the game to try again with a new shuffled set of cards, keeping the challenge fresh and engaging.
+
+    ![alt text](assets/docs/pages/game-won.png "The losing screen")
+
+  * Challenge Yourself: Try to beat the game even faster next time by improving your memory and matching all pairs in fewer moves and a shorter time!
+
   
