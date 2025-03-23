@@ -35,3 +35,19 @@ As you play, every move counts! Each match you find brings you closer to victory
     ![alt text](assets/docs/pages/game-full.png "The Full Game")
   
   * Endless Replayability: Each game is different thanks to the random card shuffle, encouraging players to keep improving their speed and memory skills with every round.
+
+* Stop The Spook Button
+
+  * Game Reset & Results Display: Pressing the Stop The Spook button ends the game, stops the timer, pauses the background music, and displays the player's final move count and time, allowing them to see their performance.
+
+    ![alt text](assets/docs/pages/stop-spook.png "The stop button")
+
+* Losing Results
+
+  * "You Lost" Message: If the player stops the game before matching all pairs, the results screen displays a "You Lost" message, indicating that the challenge was not completed.
+
+  * Performance Summary: The screen shows the total number of moves and the elapsed time, allowing the player to reflect on their attempt and try again for a better result.
+
+    ![alt text](assets/docs/pages/game-lost.png "The losing screen")
+
+  
