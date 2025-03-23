@@ -6,6 +6,8 @@ The Spook Match Game is a thrilling Halloween-themed memory challenge designed t
 
 As you play, every move counts! Each match you find brings you closer to victory, but the challenge lies in remembering where each card is hidden. The game keeps track of your time and number of moves, pushing you to improve your performance with every round. Whether you're playing casually for fun or competing to beat your best time, Spook Match Game offers a perfect balance of excitement and brain-teasing fun. The randomly shuffled cards ensure that every game is a unique experience, keeping you on your toes with each new attempt.
 
+![alt text](assets/docs/pages/full-spook.png "Full images across devices")
+
 ## Features
 
 * The Modal
