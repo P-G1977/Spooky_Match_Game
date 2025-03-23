@@ -23,3 +23,15 @@ As you play, every move counts! Each match you find brings you closer to victory
   * Game Initialization: After clicking the "I Understand" button on the Modal. The Start The Spook button starts the game, starting the time, moves-count, and a new set of shuffled cards.
 
     ![alt text](assets/docs/pages/start-spook.png "Game start button")
+
+* The Full Game
+
+  * Spooky Memory Challenge: The Spook Match Game is a Halloween-themed memory game where players flip cards to find matching spooky pairs, testing their memory and concentration.
+
+  * Timed & Move-Based Gameplay: Players must match all pairs as quickly as possible while keeping their move count low, adding a competitive and strategic element to the game.
+
+  * Immersive Experience: With eerie background music, creepy visuals, and a suspenseful atmosphere, the game creates a fun and engaging spooky adventure for players of all ages.
+
+    ![alt text](assets/docs/pages/game-full.png "The Full Game")
+  
+  * Endless Replayability: Each game is different thanks to the random card shuffle, encouraging players to keep improving their speed and memory skills with every round.
