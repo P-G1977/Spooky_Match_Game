@@ -62,4 +62,10 @@ As you play, every move counts! Each match you find brings you closer to victory
 
   * Challenge Yourself: Try to beat the game even faster next time by improving your memory and matching all pairs in fewer moves and a shorter time!
 
+* Music On / Off Choice
+
+  * Music Toggle Feature: Players can turn the spooky background music on or off at any time using the Music: ON/OFF button for a customized gaming experience.
+
+    ![alt text](assets/docs/pages/music-on-off.png "Music on/off toggle")
+
   
