@@ -15,3 +15,9 @@ As you play, every move counts! Each match you find brings you closer to victory
   * User Interaction: The modal includes a button labeled "I Understand!" that allows players to close the modal and start the game, ensuring they have read the instructions before playing.
 
     ![alt text](assets/docs/pages/game-modal.png "Game modal showing instructions and rules")
+
+* The Start Button
+
+  * Game Initialization: After clicking the "I Understand" button on the Modal. The Start The Spook button starts the game, starting the time, moves-count, and a new set of shuffled cards.
+
+    ![alt text](assets/docs/pages/start-spook.png "Game start button")
