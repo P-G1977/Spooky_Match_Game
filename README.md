@@ -23,7 +23,7 @@ As you play, every move counts! Each match you find brings you closer to victory
 
 ![alt text](assets/docs/fonts/main-font.png "Metal Mania Font")
 
-Metal Mania font by [Google Fonts](https://fonts.google.com/?query=metal+mania) was used for most of the text on the game. The fallback "sans-serif" font was used on the Music On/Off button, and the timer and moves count. The Metal Mania font looked relevant for this halloween themed game.
+Metal Mania font by [Google Fonts](https://fonts.google.com/?query=metal+mania) was used for most of the text on the game. The fallback "sans-serif" font was used on the Music On/Off button, the timer and moves count. The Metal Mania font looked relevant for this halloween themed game.
 
 * imagery
 
