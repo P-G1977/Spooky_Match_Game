@@ -1,4 +1,4 @@
-# The Spook Match Game - Milestone two
+# The Spook Match Game - Milestone Two
 
 [View live project here.](https://p-g1977.github.io/Spooky_Match_Game/)
 
@@ -101,4 +101,24 @@ As you play, every move counts! Each match you find brings you closer to victory
   * I ran the code through [JS Hint](https://jshint.com/) and discovered 83 warnings with 'Two undefined variables'. I had not declared the 2 variables firstCardValue and secondCardValue. I declared the 2 variables and fixed the problem. However the 83 warnings I was not able to fix as far as I know. No errors. 
 
     ![alt text](assets/docs/testing/jshint.png "JavaScript testing results")
+
+* Feature Testing
+
+  * The Modal will show the game rules when the screen first loads, the game start button will show when the "I Understand" button is clicked.
+
+  * The "Start The Spook" button will stat the game when clicked.
+
+  * I tested that only two cards can be uncovered at a time and they reset when the next card is flipped.
+
+  * The moves count moves incremental by one every time two cards are flipped.
+
+  * The timer starts when the game starts and will not cut off until the game is finished or if the game is stopped by pressing "Stop The Spook".
+
+  * When the game is won the winning screen shows the correct moves and time.
+
+  * When the game is stopped the losing screen shows the correct moves and time.
+
+  * The music on / off button stops and restarts the music when clicked.
+
+  * All features have been tested on Desktop, Tablet, and Mobile devices.
 
