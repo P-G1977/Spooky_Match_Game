@@ -199,3 +199,40 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
 6. [Favicon](https://favicon.io/favicon-generator/)
 
     * [Favicon generator](https://favicon.io/favicon-generator/) was used to create the Favicon for the website.
+
+
+## Deployment
+
+### Version Control
+
+* This site was created using Visual Studio Code editor and pushed to Github to the remote repository 'Spooky_Match_Game'.
+* Git commands were used throughout the development to push the code to the remote repository. The following Git commands were used.
+    * git add . | To add the files to the staging area before being commited.
+    * git commit -m "commit message" | To commit changes to the local repository queue.
+    * git push | To push all commited code to the remote repository on Github
+
+### Deployment to Github
+
+* I deployed this site to Github as follows.
+    * In the Github repository navigate to the Settings tab.
+    * At the source section drop-down menu, select the Master branch and save.
+    * When the Master branch is selected, the page will provide a link to the website.
+* The live link is: [The Spook Match Game](https://p-g1977.github.io/Spooky_Match_Game/)
+
+### Forking the Github Repository
+
+* Log into GitHub and locate [Spooky Match Game](https://github.com/P-G1977/Spooky_Match_Game).
+* At the top of the repository (not top of page) just above the 'Settings' Button on the menu, locate the 'Fork' Button.
+* You should now have a copy of the original repository in your GitHub account. However this WILL NOT affect the original repository but will just make a copy.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate [P-G1977/Spooky_Match_Game](https://github.com/P-G1977/Spooky_Match_Game).
+2. Under the repository name, click 'Clone or download'.
+    * To download the Zip file click the 'Download Zip' at the bottom of the dropdown menu.
+3. To clone the repository using HTTPS, under 'Clone with HTTPS', copy the link.
+4. Open Git Bash.
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+  `$ git clone https://github.com/P-G1977/Spooky_Match_Game.git`
+7. Press Enter. Your local clone will be created.
