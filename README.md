@@ -8,6 +8,31 @@ As you play, every move counts! Each match you find brings you closer to victory
 
 ![alt text](assets/docs/pages/full-spook.png "Full images across devices")
 
+## Design
+
+* Color Scheme
+
+| Main Colors  | Typorgraphy  |
+| ------------ |:------------ |
+| Black        | White        |
+| White        |              |
+| #f30808      |              |
+| #880808      |              |
+
+* Typography
+
+![alt text](assets/docs/fonts/main-font.png "Metal Mania Font")
+
+Metal Mania font by [Google Fonts](https://fonts.google.com/?query=metal+mania) was used for most of the text on the game. The fallback "sans-serif" font was used on the Music On/Off button, and the timer and moves count. The Metal Mania font looked relevant for this halloween themed game.
+
+* imagery
+
+  * The main game design is based around Halloween themed imagery. The background image is a graveyard and the cards for the game are all Halloween / Horror related.
+
+  ![alt text](assets/docs/pages/game-with-cards.png "Full images across devices")
+
+
+
 ## Features
 
 * The Modal
@@ -130,4 +155,10 @@ As you play, every move counts! Each match you find brings you closer to victory
 At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper``` and the audio on / off button was at the corner of the screen. After loading the game on my mobile i discovered the button was hidden underneath the game and I was unable to toggle the audio. After moving the HTML ```<button>``` inside the ```.game-container``` and placing correctly with CSS, the music on/off button was nicely placed in the game below the game title.
 
 * The last bug was simple to solve. I had to click the music on / off button twice to turn the music off, but after that it would click on / off without error. After looking at the game on DevTools and then looking at the JavaScript I realised I had incorrectly set the ```let isAudioPlaying = false;``` instead of ```let isAudioPlaying = true;```. This bug was then fixed and the music plays and toggles on / off without clicking twice.
+
+### Unfixed Bugs
+
+* There are no unfixed bugs
+
+
 
