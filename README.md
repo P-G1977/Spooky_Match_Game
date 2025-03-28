@@ -109,6 +109,10 @@ Metal Mania font by [Google Fonts](https://fonts.google.com/?query=metal+mania) 
 
 * Chrome, Safari and Firefox browsers have been tested and they all work with the game.
 
+* I have tested the game on Iphone 12, Iphone SE, Samsung Galaxy Flip 2 and Samsung Galaxy S24.
+
+* I have made sure the colors contrast well together to keep the elements easily identifiable and readable.
+
 * HTML
 
   * I ran the code through [W3C HTML validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fp-g1977.github.io%2FSpooky_Match_Game%2F) and there were no errors or warnings.
@@ -160,5 +164,38 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
 
 * There are no unfixed bugs
 
+## Technologies Used
 
+### Languages Used
 
+* [HTML5](https://en.wikipedia.org/wiki/HTML5) 
+
+* [CSS3](https://en.wikipedia.org/wiki/CSS#CSS_3)
+
+* [JavaScript (ES6+)](https://en.wikipedia.org/wiki/JavaScript)
+
+### Frameworks, Libraries & Programs Used
+
+1. [Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) 
+
+    * Boostrap was used to assist with the responsiveness and styling of the website.
+
+2. [Google Fonts](https://fonts.google.com/) 
+
+    * Google fonts were used to import the "Metal Mania" font into the style.css file which is used on all the pages throughout the project.
+
+3. [Visual Studio Code](https://code.visualstudio.com/) 
+
+    * Visual Studio Code was the source code editor, designed for writing and editing code efficiently.
+
+4. [GIT](https://git-scm.com/)
+
+    * Git was used for the version control by utilizing the Visual Studio Code terminal to commit to Git and Push to GitHub.
+
+5. [GitHub](https://github.com/)
+
+    * GitHub is used to store the projects code after being pushed to GitHub.
+
+6. [Favicon](https://favicon.io/favicon-generator/)
+
+    * [Favicon generator](https://favicon.io/favicon-generator/) was used to create the Favicon for the website.
