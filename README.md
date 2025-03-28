@@ -200,6 +200,10 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
 
     * [Favicon generator](https://favicon.io/favicon-generator/) was used to create the Favicon for the website.
 
+7. [Balsamiq](https://balsamiq.com/)
+
+    * Balsamiq was used to create the wireframes during the design process.
+
 
 ## Deployment
 
@@ -236,3 +240,21 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
 6. Type `git clone`, and then paste the URL you copied in Step 3.
   `$ git clone https://github.com/P-G1977/Spooky_Match_Game.git`
 7. Press Enter. Your local clone will be created.
+
+## Wireframe
+
+  * The Wireframe I made was pretty simple. It shows the original design layout, which changed slightly over the time it was created.
+
+![alt text](assets/docs/wireframe/spook-wireframe.png "Wireframe for game")
+
+## Credits
+
+### Images
+
+* All card images were used from [FLATICON](https://www.flaticon.com/packs/halloween-8#) and the designer of the Flaticons is [Freepik](https://www.freepik.com)
+
+* The background Graveyard image was used from [pixabay](https://pixabay.com/photos/pumpkins-halloween-night-gruesome-7555083) and the designer of the image is [anaterate](https://pixabay.com/users/anaterate-2348028/)
+
+### Music
+
+* The Spooky music was taken from [pixabay](https://pixabay.com/) and the title of the audio is 'Scary night' and was created by [freesound_community](https://pixabay.com/users/freesound_community-46691455)
