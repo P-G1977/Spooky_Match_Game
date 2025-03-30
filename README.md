@@ -178,7 +178,7 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
 
 1. [Bootstrap v5.3](https://getbootstrap.com/docs/5.3/getting-started/introduction/) 
 
-    * Boostrap was used to assist with the responsiveness and styling of the website.
+    * Boostrap was used to assist with the responsiveness and styling of the project.
 
 2. [Google Fonts](https://fonts.google.com/) 
 
@@ -243,7 +243,7 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
 
 ## Wireframe
 
-  * The Wireframe I made was pretty simple. It shows the original design layout, which changed slightly over the time it was created.
+  * The Wireframe I made was pretty simple. It shows the original design layout, which was changed and altered when building the project.
 
 ![alt text](assets/docs/wireframe/spook-wireframe.png "Wireframe for game")
 
