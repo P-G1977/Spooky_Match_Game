@@ -233,6 +233,15 @@ button {
   cursor: pointer;
 }
 
+/* Error */
+
+.error {
+  background-image: url('../images/pumpkinswp.webp');
+  background-size: cover;
+  border: 3px solid black;
+  border-radius: 25px;
+}
+
 /* Media Queries */
   
   /* For smaller devices */
