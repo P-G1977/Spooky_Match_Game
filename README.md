@@ -247,11 +247,11 @@ At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper`
   `$ git clone https://github.com/P-G1977/Spooky_Match_Game.git`
 7. Press Enter. Your local clone will be created.
 
-## Wireframe
+## Wireframes
 
-  * The Wireframe I made was pretty simple. It shows the original design layout, which was changed and altered when building the project.
+  * The Wireframes were made with [Balsamiq](https://balsamiq.com/). They are simply made and they show the basic form of the game. The full game grid was a lot smaller than the original grid made with the wireframe, and the winning and losing screen text was first designed to be at the top of the start game button. The design changed over the development of the game. Please see below to access the folder of wireframes.
 
-![alt text](assets/docs/wireframe/spook-wireframe.png "Wireframe for game")
+    [Full Range Of Wireframes here](assets/docs/wireframe/) 
 
 ## Credits
 
