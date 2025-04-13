@@ -168,11 +168,276 @@ Metal Mania font by [Google Fonts](https://fonts.google.com/?query=metal+mania) 
 
 ## Testing
 
+### JavaScript Full Functionality Explanation for Spook Match
+
+<details>
+<summary>Click to expand details</summary>
+
+### DOM Content Loaded – Welcome Modal
+
+Triggers once the HTML content is fully loaded
+
+  * Hides the welcome modal when the "I Understand" button is clicked.
+
+  ```js
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("welcome-modal");
+    const closeModal = document.getElementById("close-modal");
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  });
+```
+### Music Control and Toggle
+
+Toggles game music on and off with a button
+
+* Audio is hidden until the game starts
+
+* Clicking toggles between playing and pausing the music
+
+ ```js
+ document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("game-audio");
+  const audioToggleButton = document.getElementById("audio-toggle");
+  let isAudioPlaying = true;
+
+  audioToggleButton.style.display = "none";
+
+  audioToggleButton.addEventListener("click", () => {
+    if (isAudioPlaying) {
+      audio.pause();
+      audioToggleButton.innerText = "Music: OFF";
+    } else {
+      audio.play();
+      audioToggleButton.innerText = "Music: ON";
+    }
+    isAudioPlaying = !isAudioPlaying;
+  });
+
+  audio.volume = 0.2;
+
+  startButton.addEventListener("click", () => {
+    audioToggleButton.style.display = "block";
+    audio.play();  
+    audioToggleButton.innerText = "Music: ON"; 
+    isAudioPlaying = true; 
+  });
+
+  stopButton.addEventListener("click", () => {
+    audioToggleButton.style.display = "none";
+    audio.pause(); 
+  });
+});
+```
+### Game Items
+
+Array of spooky card objects
+
+* Each object contains a name and image URL
+
+```js
+const items = [
+  { name: "bat", image: "assets/images/bat.png" },
+  { name: "black-cat", image: "assets/images/black-cat.png" },
+  // ... other spooky items
+];
+```
+### Time Generator
+
+Tracks and displays time in MM:SS format
+
+```js
+const timeGenerator = () => {
+  seconds += 1;
+  if (seconds >= 60) {
+    minutes += 1;
+    seconds = 0;
+  }
+  let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+  let minutesValue = minutes < 10 ? `0${minutes}` : minutes;
+  timeValue.innerHTML = `<span>Time:</span>${minutesValue}:${secondsValue}`;
+};
+```
+### Move Counter
+
+Increases move count and updates the display every pair flip attempt
+
+```js
+const movesCounter = () => {
+  movesCount += 1;
+  moves.innerHTML = `<span>Moves:</span>${movesCount}`;
+};
+```
+### Random Card Generator
+
+Randomly selects half the amount of card pairs based on board size
+
+```js
+const generateRandom = (size = 4) => {
+  let tempArray = [...items];
+  let cardValues = [];
+  size = (size * size) / 2;
+
+  for (let i = 0; i < size; i++) {
+    const randomIndex = Math.floor(Math.random() * tempArray.length);
+    cardValues.push(tempArray[randomIndex]);
+    tempArray.splice(randomIndex, 1);
+  }
+  return cardValues;
+};
+```
+### Matrix Generator
+
+Creates the game board and handles card click logic
+
+```js
+const matrixGenerator = (cardValues, size = 4) => {
+  gameContainer.innerHTML = "";
+  cardValues = [...cardValues, ...cardValues];
+  cardValues.sort(() => Math.random() - 0.5);
+
+  for (let i = 0; i < size * size; i++) {
+    gameContainer.innerHTML += `
+      <div class="card-container" data-card-value="${cardValues[i].name}">
+        <div class="card-before"><img src="assets/images/coffin.png" class="image"></div>
+        <div class="card-after">
+          <img src="${cardValues[i].image}" class="image"/>
+        </div>
+      </div>
+    `;
+  }
+
+  gameContainer.style.gridTemplateColumns = `repeat(${size},auto)`;
+
+  cards = document.querySelectorAll(".card-container");
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      if (firstCard && secondCard) return;
+
+      if (!card.classList.contains("matched") && !card.classList.contains("flipped")) {
+        card.classList.add("flipped");
+
+        if (!firstCard) {
+          firstCard = card;
+          firstCardValue = card.getAttribute("data-card-value");
+        } else {
+          secondCard = card;
+          secondCardValue = card.getAttribute("data-card-value");
+          movesCounter();
+
+          if (firstCardValue === secondCardValue) {
+            firstCard.classList.add("matched");
+            secondCard.classList.add("matched");
+            firstCard = secondCard = false;
+            winCount++;
+
+            if (winCount === Math.floor(cardValues.length / 2)) {
+              result.innerHTML = `<h2>You Won!</h2>
+                                  <h4>Moves: ${movesCount}</h4>
+                                  <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
+              stopGame();
+            }
+          } else {
+            let [tempFirst, tempSecond] = [firstCard, secondCard];
+            firstCard = secondCard = false;
+
+            setTimeout(() => {
+              tempFirst.classList.remove("flipped");
+              tempSecond.classList.remove("flipped");
+            }, 900);
+          }
+        }
+      }
+    });
+  });
+};
+```
+### Stop Game
+
+Stops timer, pauses music, and shows result
+
+```js
+const stopGame = () => {
+  controls.classList.remove("hide");
+  stopButton.classList.add("hide");
+  startButton.classList.remove("hide");
+  clearInterval(interval);
+
+  audio.pause();
+  audio.currentTime = 0;
+
+  result.innerHTML = `<h2>${
+    winCount < Math.floor(cards.length / 2) ? "You Lost" : "You Won!"
+  }</h2>
+    <h4>Moves: ${movesCount}</h4>
+    <h4>Time: ${formatTime(seconds, minutes)}</h4>`;
+};
+```
+### Game Start Logic
+
+Resets game values and begins timer
+
+```js
+startButton.addEventListener("click", () => {
+  movesCount = 0;
+  seconds = 0;
+  minutes = 0;
+  timeValue.innerHTML = `<span>Time:</span> 00:00`;
+  controls.classList.add("hide");
+  stopButton.classList.remove("hide");
+  startButton.classList.add("hide");
+  interval = setInterval(timeGenerator, 1000);
+  moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+  initializer();
+
+  audio.play();
+  audio.volume = 0.2;
+});
+```
+### Game Reset
+
+Stops the game when stop button is clicked
+
+```js
+if (stopButton) {
+  stopButton.addEventListener("click", () => {
+    stopGame();
+    audio.pause();
+    audio.currentTime = 0;
+  });
+}
+```
+### Initialiser
+
+Clears previous results and sets up new game
+
+```js
+const initializer = () => {
+  result.innerText = "";
+  winCount = 0;
+  let cardValues = generateRandom();
+  matrixGenerator(cardValues);
+};
+```
+</details>
+
+---
+
+### Manual Testing
+
+<details>
+<summary>Click to expand details</summary>
+</details>
+
+---
+
 * Accessibiliy
 
   * I ran the page through Lighthouse and the performance score result showed 96. I found out that if I removed the unused script kit for FontAwesome I may get better performance results. After removing the script I scored 100 across the 5 categories.
 
     ![alt text](assets/docs/testing/lighthouse.png "Lighthouse testing results")
+
 
 * Chrome, Safari and Firefox browsers have been tested and they all work with the game.
 
