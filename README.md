@@ -95,6 +95,12 @@ Metal Mania font by [Google Fonts](https://fonts.google.com/?query=metal+mania) 
 
     ![alt text](assets/docs/pages/music-on-off.png "Music on/off toggle")
 
+* 404 Error Page
+
+  * Error page: If a player accidentally navigates to an incorrect page, the 404 error page will show which has a link to redirect the player to the home page.
+
+    ![alt text](assets/docs/pages/404.png "404 Error Page")
+
 ### Features Left To Implement
 
 * I would like to have an option to play with more or less cards to increase / decrease difficulty. And have the ability to play against the timer to add an extra layer of challenge.
