@@ -8,6 +8,67 @@ As you play, every move counts! Each match you find brings you closer to victory
 
 ![alt text](assets/docs/pages/full-spook.png "Full images across devices")
 
+## Project Explanation
+
+Spook Match is a fun, Halloween-themed memory card game designed to entertain users while testing their memory and concentration skills through matching spooky character pairs within a timed challenge.
+
+### Client Goals
+
+This project was developed as part of my Diploma in Web Application Development, serving as a practical milestone in building interactive, JavaScript-driven web applications. While there was no real-life client, I approached Spook Match as a professional-grade product, focusing on clean structure, user engagement, and alignment with potential client expectations.
+
+* Delivering an interactive memory-matching game that challenges users’ focus, pattern recognition, and memory skills.
+
+* Offering a playful, spooky-themed game suitable for seasonal promotions or casual gaming platforms.
+
+* Encouraging repeated playthroughs through simple mechanics, time tracking, and a scoring system that motivates improvement.
+
+* Adding value to a potential client’s web content with a fun, themed browser game that enhances user engagement and time on site.
+
+* Ensuring accessibility with a fully browser-based, lightweight game that works across desktop and mobile devices.
+
+* Providing a friendly, visually engaging interface that reflects strong frontend design and coding principles.
+
+### User Goals
+
+The target audience for Spook Match includes casual gamers of all ages who enjoy themed memory challenges and lighthearted fun.
+
+  * Test their memory and focus by matching spooky card pairs under time pressure.
+
+  * Enjoy a festive, Halloween-inspired design that adds charm to each game session.
+
+  * Dive into gameplay that's simple to understand, yet rewarding to master.
+
+  * Challenge themselves to beat previous scores with fewer moves and faster times.
+
+  * Play instantly in the browser with no downloads or installations required.
+
+  * Relax and have fun during quick breaks, seasonal events, or casual game nights.
+
+## User Stories
+
+Spook Match is designed as a light, casual memory game that draws players in with its spooky theme, simple gameplay, and quick rounds. It’s ideal for users looking to unwind, pass time, or enjoy a short challenge—whether as part of a larger entertainment platform or a standalone experience.
+
+* User
+
+  * I want to play a fun and spooky memory game that’s easy to understand.
+
+  * I want to challenge my memory and concentration in a casual, low-pressure setting.
+
+  * I want a game that’s quick to load and works right in the browser without needing to install anything.
+
+  * I want to enjoy short, engaging sessions that I can play during breaks or downtime.
+
+  * I want the game to have intuitive controls and a responsive interface.
+
+  * I want a smooth experience without bugs or slowdowns, even on mobile.
+
+  * I want to improve my performance over time by trying to match cards faster and with fewer moves.
+
+  * I want a game that’s visually appealing and keeps me coming back for another round.
+
+  * I want to be able to toggle the background music on or off depending on my environment or preference.
+
+
 ## Design
 
 * Color Scheme
