@@ -555,6 +555,92 @@ This matched the actual state of the audio when the game started, ensuring the t
 
 ---
 
+### User Story Tests
+
+<details>
+<summary>Click to expand User Story Testing </summary>
+
+| Number | User Goal            | How It Was Achieved
+| ------ |:-------------------- |:-----------------------------------------------------|
+| 1.     | Start the Game       | A clearly labeled “Start” button initiates a new     |
+|        | Easily               | game, resetting the timer and board.                 |
+| 2.     | Stop or Reset        | A visible “Stop” button allows users to reset the    |
+|        | the Game Anytime     | game at any point.                                   |
+| 3.     | Understand Feedback  | Card flips and matches provide immediate visual      |
+|        | on Each Move         | feedback to enhance understanding and engagement.    |
+| 4.     | Track Time and       | The timer and move counter update in real time,      |
+|        | Moves Clearly        | helping users monitor performance.                   |
+| 5.     | Toggle Background    | A custom audio toggle button enables players to      |
+|        | Music Freely         | turn music on/off seamlessly during play.            |
+| 6.     | Receive a Clear      | A win/loss message displays at the end of each game  |
+|        | Endgame Message      | with total moves and time taken.                     |
+
+
+* User Story 1:
+
+  * I want to be able to start the game easily.
+
+  ![alt text](assets/docs/testing/us-modal.png "user story modal")
+
+  * Action:   User clicks 'I Understand', Then click 'Start The Spook' button.
+  * Result:  Game starts as expected.
+
+  ![alt text](assets/docs/testing/us-start.png "user story start")
+
+* User Story 2:
+
+  * I want to be able to stop or reset the game anytime.
+
+  ![alt text](assets/docs/testing/us-stop.png "user story stop")
+
+  * Action:   User clicks the “Stop The Spook” button.
+  * Result:  Game stops and you can reset by clicking 'Start The Spook' on losing screen.
+
+  ![alt text](assets/docs/testing/us-lose.png "user story lose")
+
+* User Story 3:
+
+  * I want to see and understand feedback on each move.
+
+  ![alt text](assets/docs/testing/us-3.png "user story flip")
+
+  * Action:   User clicks a card to flip it.
+  * Result:  Card flips to reveal its image. If matched, both remain flipped and are marked as matched.
+
+* User Story 4:
+
+  * I want to track time and moves clearly.
+
+  ![alt text](assets/docs/testing/us-t&m.png "user story time and moves")
+
+  * Action:   User interacts with the game by flipping cards.
+  * Result:  Timer and move counter dynamically update after every pair flipped.
+
+* User Story 5:
+
+  * I want to toggle background music freely.
+
+  ![alt text](assets/docs/testing/us-musicon.png "user story music on")
+
+  * Action:   User clicks the "Music: ON/OFF" button
+  * Result:  Background music toggles on or off; button label updates accordingly
+
+  ![alt text](assets/docs/testing/us-musicoff.png "user story music off")
+
+
+* User Story 6:
+
+  * I want to receive a clear Endgame message.
+
+  ![alt text](assets/docs/testing/us-win.png "user story win screen")
+
+  * Action:   User successfully matches all card pairs or stops the game
+  * Result:  A message appears stating "You Won!" or "You Lost", including total moves and time.
+
+</details>
+
+### Further Testing
+
 * Accessibiliy
 
   * I ran the page through Lighthouse and the performance score result showed 96. I found out that if I removed the unused script kit for FontAwesome I may get better performance results. After removing the script I scored 100 across the 5 categories.
