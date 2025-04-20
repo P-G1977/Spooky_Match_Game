@@ -427,7 +427,130 @@ const initializer = () => {
 ### Manual Testing
 
 <details>
-<summary>Click to expand details</summary>
+<summary>Click to expand Manual Testing and Bug Tracker</summary>
+
+Manual and automatic testing both play important roles in JavaScript development. Manual testing allows for exploratory, real-time interaction with a web application—ideal for catching visual glitches, assessing user experience, and verifying functionality across different devices or browsers. In contrast, automated testing with tools like Jest provides speed, consistency, and scalability by running repeatable tests on functions, logic, and UI behavior, reducing the risk of regressions over time. For this project, I chose to rely solely on manual testing. Since the application is primarily visual and interactive, manual testing allowed me to directly observe and evaluate gameplay behavior, user interface elements, and modal interactions without the overhead of writing test scripts. It also gave me the flexibility to quickly tweak and test features as I built them, which suited the scope and style of this game-focused project.
+
+## 🐞 Bug Tracker: Halloween Memory Game
+
+Below is my professionally formatted bug tracker. It outlines key issues encountered during development, their diagnoses, and the solutions implemented to resolve them. Each entry follows a consistent structure for clarity and ease of reference.
+
+### 1. Audio Controls Not Responding
+
+* Error: Clicking the `#audio-toggle` button had no effect.
+
+* Diagnosis:
+- Console error: `Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')`
+* Cause: Button not in DOM when script ran.
+
+* Fix:
+Wrapped the code in `DOMContentLoaded`:
+```js
+document.addEventListener("DOMContentLoaded", () => {
+  const audioToggleButton = document.getElementById("audio-toggle");
+  ...
+});
+```
+
+### 2. Modal Not Closing
+
+* Error: Click on close button didn’t hide modal.
+
+* Diagnosis:
+- `console.log(modal, closeModal)` output: `null null`
+* Fix:
+Moved into DOMContentLoaded:
+```js
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("welcome-modal");
+  const closeModal = document.getElementById("close-modal");
+  ...
+});
+```
+
+### 3. Grid Not Displaying Properly
+
+* Error: Cards weren’t in a grid.
+
+* Diagnosis:
+Inspected `.game-container` – style not applied properly.
+* Fix:
+Fixed JS string formatting:
+```js
+gameContainer.style.gridTemplateColumns = `repeat(${size}, auto)`;
+```
+
+### 4. Flipping 3 Cards
+
+* Error: Players could flip a 3rd card before timeout.
+
+* Diagnosis:
+Logged `firstCard`, `secondCard` – both were set, but game didn’t prevent 3rd flip
+* Fix:
+Added condition:
+```js
+if (firstCard && secondCard) return;
+```
+
+### 5. Moves and Time Not Rendering
+
+* Error: Displayed as `[object HTMLSpanElement]00:00`
+
+* Diagnosis:
+Used `console.log(moves.innerHTML)` — incorrect value.
+* Fix:
+Used proper template literals:
+```js
+moves.innerHTML = `<span>Moves:</span> ${movesCount}`;
+timeValue.innerHTML = `<span>Time:</span> ${minutesValue}:${secondsValue}`;
+```
+
+### 6. Win Condition Not Triggering
+
+* Error: All cards matched, but win message didn’t show.
+
+* Diagnosis:
+Console: `winCount` vs `cardValues.length / 2` mismatch
+* Fix:
+Used original size value:
+```js
+if (winCount === size * size / 2) {
+  // win logic
+}
+```
+
+### 7. Audio Toggle Button Hidden on Mobile
+
+* Error: Music on/off button was either styled poorly or completely hidden on mobile view.
+
+* Diagnosis:
+Initially, music was added using the HTML ```<audio loop controls>``` element. However, the default browser audio controls were visually intrusive. After removing controls, I implemented a custom ```<button>``` (#audio-toggle) and styled it with .audio-toggle in CSS. Inspired by a [freeCodeCamp forum article,](https://forum.freecodecamp.org/t/power-on-off-button-to-control-audio/459693) I wrote JS logic to toggle audio playback.
+
+After testing on mobile, I found that the button was unreachable—it had been placed outside of the .wrapper and was hidden beneath the game.
+* Fix:
+I moved the button inside the .game-container and restyled it, ensuring it was properly positioned and visible below the game title across screen sizes. The music now starts on game start and can be toggled with a custom button.
+
+### 8. Music Toggle Bug: First Click Didn’t Work
+
+* Error: The audio on/off button required two clicks before it would toggle properly.
+
+* Diagnosis:
+During testing, I noticed the first click on the toggle button had no effect. After checking the DevTools and JS logic, I realized I had mistakenly initialized the toggle state with:
+```js
+let isAudioPlaying = false;
+```
+Even though audio started playing on game start, the logic thought it was paused.
+Fix:
+I corrected the initial state to:
+```js
+let isAudioPlaying = true;
+```
+This matched the actual state of the audio when the game started, ensuring the toggle functioned correctly on the first click.
+
+### Unfixed Bugs
+
+* All major bugs addressed. Game logic now stable and behaves as expected.
+
 </details>
 
 ---
@@ -482,19 +605,6 @@ const initializer = () => {
   * The music on / off button stops and restarts the music when clicked.
 
   * All features have been tested on Desktop, Tablet, and Mobile devices.
-
-## Bugs (Problems / Fixes)
-
-* When designing the basic version of the game I had a meeting with my Mentor who pointed out that the card flipping code could be broken by continually flipping the cards, because there was no restriction on clicking additional cards while two were already flipped, which could lead to unintended behavior. Upon further research on [StackOverflow](https://stackoverflow.com/questions/33498769/why-does-javascript-operator-return-the-second-expression) and [Reddit](https://www.reddit.com/r/learnprogramming/comments/qcc927/when_does_returns_the_first_falsy_value_and_when/) I added  ```if (firstCard && secondCard) return; ``` at the beginning of the click event. This ensures that once two cards are flipped, no further cards can be clicked until the current pair is either matched or flipped back.
-
-* Upon further development of the game I decided it would create a more unsettling environment to add music to the game. I talked about this to my Mentor who let me know that if I were to add music, I would need to add something to the game to turn the music off. I first added the music with the HTML ```<Audio loop controls>``` element. Unfortunately this revealed large, rather ugly audio default play, pause, and volume controls. I removed the "controls" from the ```<Audio>``` element and designed a ```<button>``` in HTML and styled ```.audio-toggle``` in CSS. Then after reading an article from [freeCodeCamp](https://forum.freecodecamp.org/t/power-on-off-button-to-control-audio/459693) created the JavaScript code using the ```audio``` variable. The ```id="audio-toggle"``` is used to toggle the music on and off, and the JavaScript logic listens for click and either plays or pauses the audio. I set the ```audio.volume = 0.2;```, as this sounded the best across the devices tested.
-At first I incorrctly placed the ```<button>``` outside of the game ```.wrapper``` and the audio on / off button was at the corner of the screen. After loading the game on my mobile i discovered the button was hidden underneath the game and I was unable to toggle the audio. After moving the HTML ```<button>``` inside the ```.game-container``` and placing correctly with CSS, the music on/off button was nicely placed in the game below the game title.
-
-* The last bug was simple to solve. I had to click the music on / off button twice to turn the music off, but after that it would click on / off without error. After looking at the game on DevTools and then looking at the JavaScript I realised I had incorrectly set the ```let isAudioPlaying = false;``` instead of ```let isAudioPlaying = true;```. This bug was then fixed and the music plays and toggles on / off without clicking twice.
-
-### Unfixed Bugs
-
-* There are no unfixed bugs
 
 ## Technologies Used
 
