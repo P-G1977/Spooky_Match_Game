@@ -771,9 +771,13 @@ This matched the actual state of the audio when the game started, ensuring the t
 
 ## Wireframes
 
-  * The Wireframes were made with [Balsamiq](https://balsamiq.com/). They are simply made and they show the basic form of the game. The full game grid was a lot smaller than the original grid made with the wireframe, and the winning and losing screen text was first designed to be at the top of the start game button. The design changed over the development of the game. Please see below to access the folder of wireframes.
+  * The Wireframes were made with [Balsamiq](https://balsamiq.com/). They are simply made and they show the basic form of the game. The full game grid was a lot smaller than the original grid made with the wireframe, and the winning and losing screen text was first designed to be at the top of the start game button. The design changed over the development of the game. Please see below to access the folders of wireframes.
 
-    [Full Range Of Wireframes here](assets/docs/wireframe/) 
+    [Full Range Of Desktop Wireframes here](assets/docs/wireframe-desktop/) 
+
+    [Full Range Of Mobile Wireframes here](assets/docs/wireframe-mobile/) 
+
+    [Full Range Of Tablet Wireframes here](assets/docs/wireframe-tablet/)
 
 ## Credits
 
